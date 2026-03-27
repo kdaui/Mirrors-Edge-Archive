@@ -31,27 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.getAttribute('data-filter');
-            galleryItems.forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.classList.remove('hidden');
-                    item.style.animation = 'none';
-                    item.offsetHeight;
-                    item.style.animation = null;
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        });
-    });
 
     const lightbox = document.getElementById('lightbox');
     const lightboxClose = document.querySelector('.lightbox-close');
