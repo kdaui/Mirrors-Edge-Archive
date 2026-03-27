@@ -31,8 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-
+    const galleryItems = document.querySelectorAll('.gallery-item');
     const lightbox = document.getElementById('lightbox');
     const lightboxClose = document.querySelector('.lightbox-close');
     const lightboxImageContainer = document.querySelector('.lightbox-image-container');
