@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme Logic
     const themeToggle = document.getElementById('theme-toggle');
     const moonIcon = document.querySelector('.moon-icon');
     const sunIcon = document.querySelector('.sun-icon');
-    
-    // Check local storage or system preference
     const currentTheme = localStorage.getItem('theme');
+    
     if (currentTheme === 'dark' || (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.body.classList.add('dark-mode');
         if (themeToggle) {
@@ -38,17 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxCaption = document.querySelector('.lightbox-caption');
 
     function openLightbox(item) {
-        const visualElement = item.querySelector('.image-placeholder, img').cloneNode(true);
+        const img = item.querySelector('img');
         const title = item.querySelector('h3').textContent;
         const desc = item.querySelector('p').textContent;
-
+        
+        const fullImg = document.createElement('img');
+        fullImg.src = img.src;
+        fullImg.alt = img.alt;
+        fullImg.loading = 'eager';
+        
         lightboxImageContainer.innerHTML = '';
-        lightboxImageContainer.appendChild(visualElement);
-
+        lightboxImageContainer.appendChild(fullImg);
         lightboxCaption.innerHTML = `<h3>${title}</h3><p>${desc}</p>`;
 
         lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        fullImg.focus();
     }
 
     function closeLightbox() {
@@ -58,19 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     galleryItems.forEach(item => {
         item.addEventListener('click', () => openLightbox(item));
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox(item);
+            }
+        });
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('role', 'button');
     });
 
     lightboxClose.addEventListener('click', closeLightbox);
-
     lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
+        if (e.target === lightbox) closeLightbox();
     });
-
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') {
-            closeLightbox();
-        }
+        if (e.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') closeLightbox();
     });
 });
