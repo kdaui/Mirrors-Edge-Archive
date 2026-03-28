@@ -266,10 +266,6 @@ body.dark-mode .theme-toggle:hover {
     color: var(--color-runner-red);
 }
 
-.back-link::before {
-    content: '←';
-}
-
 .lightbox {
     position: fixed;
     inset: 0;
