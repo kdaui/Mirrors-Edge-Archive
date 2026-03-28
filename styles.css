@@ -368,24 +368,19 @@ body.dark-mode .theme-toggle:hover {
 }
 
 .site-footer .footer-content {
-    flex: 1;
-    min-width: 200px;
+    text-align: left;
 }
 
 .site-footer .footer-content p {
     color: var(--color-city-gray);
     font-size: 0.95rem;
     max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
 }
 
 .site-footer p {
     color: var(--color-city-gray);
     font-size: 0.95rem;
     max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
 }
 
 .site-footer .last-updated-date {
