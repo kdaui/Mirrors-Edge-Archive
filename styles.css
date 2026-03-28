@@ -419,6 +419,119 @@ body.dark-mode .theme-toggle:hover {
     }
 }
 
+.videos-section {
+    margin-bottom: 48px;
+}
+
+.videos-section h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    color: var(--color-deep-black);
+}
+
+.section-intro {
+    color: var(--color-city-gray);
+    margin-bottom: 24px;
+}
+
+.section-intro a {
+    color: var(--color-runner-red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.section-intro a:hover {
+    text-decoration: underline;
+}
+
+.video-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.video-card {
+    background: var(--color-off-white);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-deep-black);
+}
+
+.video-info p {
+    color: var(--color-city-gray);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.external-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--color-runner-red);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color var(--transition-fast);
+}
+
+.external-link:hover {
+    background: var(--color-deep-black);
+}
+
+.external-links-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+}
+
+.external-links-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-off-white);
+}
+
+.external-links-list li:last-child {
+    border-bottom: none;
+}
+
+.external-links-list a {
+    color: var(--color-catalyst-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.external-links-list a:hover {
+    text-decoration: underline;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
