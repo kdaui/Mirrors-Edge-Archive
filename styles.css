@@ -365,6 +365,7 @@ body.dark-mode .theme-toggle:hover {
 
 .site-footer .footer-content {
     text-align: center;
+    padding-right: 100px;
 }
 
 .site-footer .footer-content p {
