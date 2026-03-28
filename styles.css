@@ -356,7 +356,6 @@ body.dark-mode .theme-toggle:hover {
 }
 
 .site-footer {
-    position: relative;
     background-color: var(--color-pure-white);
     padding: 30px 20px;
     border-top: 1px solid var(--color-off-white);
@@ -365,7 +364,6 @@ body.dark-mode .theme-toggle:hover {
 
 .site-footer .footer-content {
     text-align: center;
-    padding-right: 100px;
 }
 
 .site-footer .footer-content p {
@@ -373,23 +371,6 @@ body.dark-mode .theme-toggle:hover {
     font-size: 0.95rem;
     max-width: 800px;
     margin: 0 auto;
-}
-
-.site-footer p {
-    color: var(--color-city-gray);
-    font-size: 0.95rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.site-footer .last-updated-date {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.75rem;
-    color: var(--color-city-gray);
-    opacity: 0.6;
 }
 
 .site-footer a {
