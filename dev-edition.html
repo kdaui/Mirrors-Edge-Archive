@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalyst Dev and Collector's Edition - Mirror's Edge Archive</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#5E8ABF" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -193,10 +197,19 @@
                     Archive</a> and the <a href="https://archive.org/details/@sidewinder51"
                     target="_blank">sidewinder51</a>
                 archive.org account.</p>
+            <p>Last updated: <span class="last-updated"></span></p>
         </div>
     </footer>
 
     <script src="script.js" defer></script>
+    <script>
+        document.querySelector('.last-updated').textContent = new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/Mirrors-Edge-Archive/sw.js').then(() => {});
+        }
+    </script>
 </body>
 
 </html>
